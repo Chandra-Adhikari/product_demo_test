@@ -2,7 +2,7 @@ require 'will_paginate/array'
 class V1::ProductsController < ApplicationController
   def index
     @products = Product.manage_list(params)
-    if @product.present?
+    if @products.present?
       @products = @products.map {|product| product.attributes.merge(product_variations: product.product_variations, product_category: product.product_category.try(:name), product_images: product.images.pluck(:content))} if @products.present?
       @products = @products.paginate(page: params[:page], per_page: 50) if @products.present?
       render(json: { message: 'Product list fetched successfully.', products: @products}, status: 200)
