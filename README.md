@@ -16,14 +16,10 @@ Things you may want to cover:
  - Clone Repository: https://github.com/chadra-adhikari/product_demo_test.git
  - bundle install
 
-* Database creation
+* Database creation & initialization
 - rake db:create db:migrate db:seed
 
-* Database initialization
-- rake db:migrate db:seed
-
-
-* How to run the test suite
+* How to run server
 - rails server
 
 * Document URL
